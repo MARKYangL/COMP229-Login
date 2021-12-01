@@ -1,0 +1,42 @@
+<!-- - File Name: contacts_add.ejs-->
+<!-- - StudentID: 301217825-->
+<!-- - Student’s Name: Yang Li-->
+<!-- - Date: 2021-11-30-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Contacts Add</title>
+    <!--    custom css-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--    bootstrap css-->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <!--    bootstrap js-->
+    <script src="/javascripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <% include partials/header.ejs %>
+    <div id="container">
+        <form action="/users/contacts/add" method="post">
+            <div class="form-groupp">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-groupp">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" class="form-control">
+            </div>
+            <div class="form-groupp">
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Add Contacts</button>
+            </div>
+        </form>
+    </div>
+    <% include partials/footer.ejs %>
+</body>
+</html>

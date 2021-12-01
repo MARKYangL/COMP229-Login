@@ -1,0 +1,54 @@
+<!-- - File Name: contacts.ejs-->
+<!-- - StudentID: 301217825-->
+<!-- - Student’s Name: Yang Li-->
+<!-- - Date: 2021-11-30-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Contacts</title>
+    <!--    custom css-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--    bootstrap css-->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <!--    bootstrap js-->
+    <script src="/javascripts/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <% include partials/header.ejs %>
+        <div id="container">
+            <a href="/contacts_add" class="btn btn-primary">Add Contacts</a>
+            <table class="table table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+                <% for( let index=0; index < contacts.length; index++ ) { %>
+                    <tr>
+                        <td>
+                            <%= contacts[index].name %>
+                        </td>
+                        <td>
+                            <%= contacts[index].phone %>
+                        </td>
+                        <td>
+                            <%= contacts[index].email %>
+                        </td>
+                        <td>
+                            <a href="/users/contacts/delete/<%=index%>" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="/contacts_update?index=<%=index%>" class="btn btn-primary btn-sm">Update</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+        <% include partials/footer.ejs %>
+</body>
+
+</html>

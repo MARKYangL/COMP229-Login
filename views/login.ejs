@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!--    custom css-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--    bootstrap css-->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <!--    bootstrap js-->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <% include partials/header.ejs %>
+    <div id="container">
+        <form action="/users/login" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Please enter a username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Please enter a password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </div>
+        </form>
+    </div>
+    <% include partials/footer.ejs %>
+</body>
+</html>
